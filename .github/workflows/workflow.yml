@@ -18,11 +18,12 @@ jobs:
       - name: Installing google-cloud-storage
         run: pip install google-cloud-storage
       
-      - name: Printing secret
-        run: printf ${{secrets.AUTH_JSON_FILE}} | sed 's/ ./& /g'
-      
       - name: Making files
-        run: echo ${{secrets.AUTH_JSON_FILE}} > tmp/auth_file.json
+        run: |
+         cat > tmp/auth_file.json <<EOL
+         ${{secrets.AUTH_JSON_FILE}}
+         EOL
+        
         
       - name: Setting environment variable
         run: export GOOGLE_APPLICATION_CREDENTIALS="tmp/auth_file.json"
