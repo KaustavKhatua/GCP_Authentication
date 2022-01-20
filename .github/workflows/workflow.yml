@@ -18,9 +18,12 @@ jobs:
       - name: Installing google-cloud-storage
         run: pip install google-cloud-storage
       
+      - name: Creating blank file
+        run: touch auth_file.json
+      
       - name: Making files
         run: |
-         cat > tmp/auth_file.json <<EOL
+         cat > auth_file.json <<EOL
          ${{secrets.AUTH_JSON_FILE}}
          EOL
         
