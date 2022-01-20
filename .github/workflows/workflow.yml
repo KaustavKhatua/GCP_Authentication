@@ -32,4 +32,4 @@ jobs:
         run: export GOOGLE_APPLICATION_CREDENTIALS="tmp/auth_file.json"
       
       - name: Running Python file
-        run: python3 File_Uploader.py
+        run: python3 file_uploader.py
