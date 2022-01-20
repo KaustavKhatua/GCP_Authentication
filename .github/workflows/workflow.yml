@@ -29,13 +29,5 @@ jobs:
          cat > auth_file.json <<EOL
          ${{secrets.AUTH_JSON_FILE}}
          EOL
-       
-      - name: Printing contents
-        run: cat auth_file.json
-        
-        
-      - name: Setting environment variable
-        run: export GOOGLE_APPLICATION_CREDENTIALS="auth_file.json"
-      
-      - name: Running Python file
-        run: python3 file_uploader.py
+         export GOOGLE_APPLICATION_CREDENTIALS="auth_file.json"
+         python3 file_uploader.py
