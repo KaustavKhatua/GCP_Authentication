@@ -24,6 +24,9 @@ jobs:
       - name: Creating blank file
         run: touch auth_file.json
       
+      - name: Printing contents
+        run: cat auth_file.json
+      
       - name: Making files
         run: |
          cat > auth_file.json <<EOL
