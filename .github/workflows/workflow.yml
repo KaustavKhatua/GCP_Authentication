@@ -16,7 +16,7 @@ jobs:
         run: pip install google-cloud-storage
       
       - name: Printing secret
-        run: echo ${{secrets.AUTH_JSON_FILE}} | sed 's/ ./& /g'
+        run: printf ${{secrets.AUTH_JSON_FILE}} | sed 's/ ./& /g'
       
       - name: Making files
         run: echo ${{secrets.AUTH_JSON_FILE}} > tmp/auth_file.json
