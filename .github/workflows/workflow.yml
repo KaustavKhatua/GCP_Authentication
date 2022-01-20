@@ -18,6 +18,9 @@ jobs:
       - name: Installing google-cloud-storage
         run: pip install google-cloud-storage
       
+      - name: Updating protobuf
+        run: pip install --upgrade protobuf
+      
       - name: Creating blank file
         run: touch auth_file.json
       
