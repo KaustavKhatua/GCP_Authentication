@@ -12,6 +12,9 @@ jobs:
     
       - uses: actions/checkout@v2
       
+      - name: Echo word
+        run: echo "ABCD"
+      
       - name: Installing google-cloud-storage
         run: pip install google-cloud-storage
       
