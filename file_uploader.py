@@ -7,3 +7,5 @@ storage_client = storage.Client()
 # Make an authenticated API request
 buckets = list(storage_client.list_buckets())
 print(buckets)
+
+print("A")
